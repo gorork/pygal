@@ -62,7 +62,7 @@ class Svg(object):
         self.root.append(etree.Comment(u('http://github.com/Kozea/pygal')))
         self.defs = self.node(tag='defs')
         self.title = self.node(tag='title')
-        self.title.text = graph.title or 'Pygal'
+        self.title.text = graph.title or ''
 
     def add_styles(self):
         """Add the css to the svg"""
