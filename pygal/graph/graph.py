@@ -173,7 +173,7 @@ class Graph(BaseGraph):
                 d='M%f %f v%f' % (x, 0, self.view.height),
                 class_='%s%sline' % (
                     'major ' if major else '',
-                    'guide ' if position != 0 else ''))
+                    'guide ' if position != 0 or not self.show_x_guides else ''))
                     # 'guide ' if position != 0 and not last_guide else ''))
             y += .5 * self.label_font_size + 5
             text = self.svg.node(
@@ -267,7 +267,7 @@ class Graph(BaseGraph):
                     d='M%f %f h%f' % (0, y, self.view.width),
                     class_='%s%sline' % (
                         'major ' if major else '',
-                        'guide ' if position != 0 else ''))
+                        'guide ' if position != 0 or not self.show_y_guides else ''))
             text = self.svg.node(
                 guides, 'text',
                 x=x,
