@@ -137,7 +137,8 @@ class Graph(BaseGraph):
                     available_space, self.label_font_size)
                 truncation = max(truncation, 1)
 
-        if 0 not in [label[1] for label in self._x_labels]:
+        if (0 not in [label[1] for label in self._x_labels] and 
+                self.show_x_guides):
             self.svg.node(axis, 'path',
                           d='M%f %f v%f' % (0, 0, self.view.height),
                           class_='line')
@@ -166,13 +167,14 @@ class Graph(BaseGraph):
             guides = self.svg.node(axis, class_='guides')
             x = self.view.x(position)
             y = self.view.height + 5
-            last_guide = (self._y_2nd_labels and label == lastlabel)
+            # last_guide = (self._y_2nd_labels and label == lastlabel)
             self.svg.node(
                 guides, 'path',
                 d='M%f %f v%f' % (x, 0, self.view.height),
                 class_='%s%sline' % (
                     'major ' if major else '',
-                    'guide ' if position != 0 and not last_guide else ''))
+                    'guide ' if position != 0 else ''))
+                    # 'guide ' if position != 0 and not last_guide else ''))
             y += .5 * self.label_font_size + 5
             text = self.svg.node(
                 guides, 'text',
