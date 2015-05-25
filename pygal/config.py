@@ -169,7 +169,7 @@ class Config(MetaConfig('ConfigBase', (object,), {})):
         20, int, "Look",
         "Margin around chart")
 
-    tooltip_border_radius = Key(0, int, "Look", "Tooltip border radius")
+    tooltip_border_radius = Key(5, int, "Look", "Tooltip border radius")
 
     inner_radius = Key(
         0, float, "Look", "Piechart inner radius (donut), must be <.9")

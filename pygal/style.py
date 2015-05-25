@@ -265,6 +265,19 @@ SolidColorStyle = Style(
             '#0099C6', '#DD4477', '#74B217', '#B82E2E', '#316395', '#994499'))
 
 
+NewBarsStyle = Style(
+    background='transparent',
+    plot_background='transparent',
+    foreground='#000000',
+    foreground_light='#000000',
+    foreground_dark='#828282',
+    opacity='.7',
+    opacity_hover='1',
+    transition='200ms ease-in',
+    colors=('#3CBEB8', '#7178b8', '#FD9102', '#109618', '#FEC201',
+            '#0099C6', '#DD4477', '#74B217', '#B82E2E', '#316395', '#994499'))
+
+
 styles = {'default': DefaultStyle,
           'light': LightStyle,
           'neon': NeonStyle,
@@ -279,7 +292,8 @@ styles = {'default': DefaultStyle,
           'dark_green': DarkGreenStyle,
           'dark_green_blue': DarkGreenBlueStyle,
           'blue': BlueStyle,
-          'solid_color': SolidColorStyle}
+          'solid_color': SolidColorStyle,
+          'new_bars': NewBarsStyle}
 
 
 parametric_styles = {}
